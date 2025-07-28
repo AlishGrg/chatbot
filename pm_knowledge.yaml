@@ -1,0 +1,56 @@
+project_management:
+  - question: What is project management?
+    answer: Project management is the application of knowledge, skills, tools, and techniques to meet project requirements.
+    
+  - question: What is IT project management?
+    answer: IT project management is the process of managing, planning, and developing information technology projects. IT projects exist within a variety of industries, including software development, information security, information systems, communications, hardware, network, databases, and mobile apps.
+    
+  - question: What are the phases of a project?
+    answer: The phases are Initiation, Planning, Execution, Monitoring and Controlling, and Closure.
+
+  - question: What is NPV?
+    answer: NPV (Net Present Value) is the present value of future cash flows minus the initial investment.
+
+  - question: What is formula for ROI?
+    answer: ROI (Return on Investment) is calculated as (Net Profit / Cost of Investment) × 100.
+    
+  - question: What is Net Profit?
+    answer: Net profit is the amount of money remaining after deducting a company's total expenses from its total revenue for a given accounting period.
+    
+  - question: How to calculate Net Profit?
+    answer: The formula for calculating net profit is
+            Net Profit = Total revenue - Total expenses
+
+            It can also be expressed as
+            Net Profit = Gross Income - Total Expenses
+
+            To determine your total revenue
+            Total Revenue (net sales) = Quantity of goods/services sold * unit price
+
+  - question: what is the formula to calculate Net Profit?
+    answer: The formula for calculating net profit is
+            Net Profit = Total revenue - Total expenses
+
+            It can also be expressed as
+            Net Profit = Gross Income - Total Expenses
+
+            To determine your total revenue
+            Total Revenue (net sales) = Quantity of goods/services sold * unit price
+
+  - question: What is a Gantt chart?
+    answer: A Gantt chart is a bar chart that illustrates a project schedule and shows task dependencies over time.
+
+  - question: What is a project lifecycle?
+    answer: The project lifecycle includes all phases from the initiation to the closure of the project.
+
+  - question: What is risk management?
+    answer: Risk management involves identifying, assessing, and controlling threats to a project's success.
+
+  - question: What is the role of a project manager?
+    answer: A project manager is responsible for planning, executing, and closing projects while managing teams, timelines, and budgets.
+
+  - question: What is a stakeholder?
+    answer: A stakeholder is any individual or group who has an interest in or is affected by the outcome of a project.
+
+  - question: What is a project charter?
+    answer: A project charter is a formal document that authorizes the project and gives the project manager the authority to use resources.

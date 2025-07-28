@@ -95,9 +95,75 @@
 
 from flask import Flask, render_template, request, jsonify, session
 from calculations import calculate_metrics,calculate_single_metric
+from chatterbot import ChatBot
+from chatterbot.trainers import ChatterBotCorpusTrainer
+from chatterbot.trainers import ListTrainer
+import yaml
+from difflib import get_close_matches
+import os
+
+
+# ========== GLOBAL ==========
+qa_data = []  # Loaded from YAML
+
+# ========== YAML LOADING & TRAINING ==========
+
+def load_qa_pairs_from_yaml(file_path):
+    global qa_data
+    if not os.path.exists(file_path):
+        print("⚠️ YAML file not found!")
+        return []
+
+    with open(file_path, 'r') as file:
+        data = yaml.safe_load(file)
+        qa_data = data.get('project_management', [])
+        return [(item['question'], item['answer']) for item in qa_data]
+
+def train_bot_from_yaml(bot, yaml_path):
+    trainer = ListTrainer(bot)
+    qa_pairs = load_qa_pairs_from_yaml(yaml_path)
+    for question, answer in qa_pairs:
+        trainer.train([question, answer])
+
+def get_fuzzy_answer(user_input):
+    questions = [item['question'] for item in qa_data]
+    match = get_close_matches(user_input, questions, n=1, cutoff=0.6)
+    if match:
+        for item in qa_data:
+            if item['question'] == match[0]:
+                return item['answer']
+    return None
+
+# ===== Initialize and train chatbot =====
+chatbot = ChatBot(
+    "ProjectBot",
+    storage_adapter="chatterbot.storage.SQLStorageAdapter",
+    database_uri="sqlite:///db.sqlite3",
+    read_only=True
+)
+train_bot_from_yaml(chatbot, "pm_knowledge.yaml")  # Your YAML file path
 
 app = Flask(__name__)
 app.secret_key = 'my_secret_key'  # Necessary for session management
+
+# ========== Setup ChatterBot ==========
+# chatbot = ChatBot("ProjectAdvisor", read_only=True)
+# trainer = ChatterBotCorpusTrainer(chatbot)
+# trainer.train("chatterbot.corpus.english")
+
+# # ========== Load YAML Knowledge Base ==========
+# with open("pm_knowledge.yaml", "r") as file:
+#     pm_data = yaml.safe_load(file)["project_management"]
+
+# # ========== PM Question Matching ==========
+# def match_pm_question(user_input):
+#     questions = [item["question"].lower() for item in pm_data]
+#     match = get_close_matches(user_input.lower(), questions, n=1, cutoff=0.6)
+#     if match:
+#         for item in pm_data:
+#             if item["question"].lower() == match[0]:
+#                 return item["answer"]
+#     return "Sorry. I can't find anything meaningful for you at the moment... :)"
 
 @app.route("/")
 def index():
@@ -124,34 +190,6 @@ def chat():
         table, summary = calculate_metrics(projects)
         full_reply = f"📊 <b>Project Comparison:</b><br><pre>{table}</pre><br>{summary}"
         return jsonify({"reply": full_reply})
-
-#        if user_input.lower().startswith("compare projects"):
-#         if not projects:
-#             return jsonify({"reply": "❌ No projects entered yet. Please add some first."})
-        
-#         table, summary = calculate_metrics(projects)
-#         full_reply = f"📊 <b>Project Comparison:</b><br><pre>{table}</pre><br>{summary}"
-#         return jsonify({"reply": full_reply})
-
-    # if user_input.startswith("add project"):
-    #     try:
-    #         parts = user_input[len("add project "):]
-    #         name_part, cost_part, rate_part, cf_part = parts.split(",")
-    #         name = name_part.split("=")[1].strip()
-    #         cost = float(cost_part.split("=")[1])
-    #         rate = float(rate_part.split("=")[1])
-    #         cf_raw = cf_part.split("=")[1].strip("[] ")
-    #         #cash_flows = list(map(float, cf_raw.split()))
-    #         cash_flows = list(map(float, cf_raw.replace(",", " ").split()))
-           
-
-    #         # Save the current project data to the session
-    #         session['current_project'] = {
-    #             "name": name,
-    #             "initial_cost": cost,
-    #             "discount_rate": rate,
-    #             "cash_flows": cash_flows
-    #         }
 
     if user_input.startswith("add project"):
         try:
@@ -194,8 +232,14 @@ def chat():
             return jsonify({"reply": f"📊 <b>{metric.upper()}</b> for given Project is: {result}"})
         except Exception as e:
             return jsonify({"reply": f"❌ Error calculating {metric}. {str(e)}"})
+        
+    fuzzy_answer = get_fuzzy_answer(user_input)
+    if fuzzy_answer:
+        return jsonify({"reply": fuzzy_answer})
 
-    return jsonify({"reply": " I can help you calculate NPV, IRR, ROI, Payback or BCR after you add a project."})
+    # return jsonify({"reply": " I can help you calculate NPV, IRR, ROI, Payback or BCR after you add a project."})
+    response = chatbot.get_response(user_input)
+    return jsonify({"reply": str(response)})
 
 if __name__ == "__main__":
     app.run(debug=True)
