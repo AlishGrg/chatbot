@@ -1,8 +1,44 @@
 project_management:
+  - question: What are you?
+    answer: Hi, I am Alex. A chatbot designed as your project management companion.
+
+  - question: Who are you?
+    answer: Hi, I am Alex. A chatbot designed for you to be your project management companion.
+
+  - question: how are you?
+    answer: Hi there, I am Good and you? Thank you ^_^
+
+  - question: Hi Alex how you doing?
+    answer: Hi there, I am doing Good and you? Thank you ^_^
+
   - question: What is project management?
     answer: Project management is the application of knowledge, skills, tools, and techniques to meet project requirements.
     
+  - question: What do you mean by project management?
+    answer: Project management is the application of knowledge, skills, tools, and techniques to meet project requirements.
+
+  - question: project management.
+    answer: Project management is the application of knowledge, skills, tools, and techniques to meet project requirements.
+
+  - question: Explain project management.
+    answer: Project management is the application of knowledge, skills, tools, and techniques to meet project requirements.
+
+  - question: Define project management.
+    answer: Project management is the application of knowledge, skills, tools, and techniques to meet project requirements.
+
   - question: What is IT project management?
+    answer: IT project management is the process of managing, planning, and developing information technology projects. IT projects exist within a variety of industries, including software development, information security, information systems, communications, hardware, network, databases, and mobile apps.
+
+  - question: What do you mean by IT project management?
+    answer: IT project management is the process of managing, planning, and developing information technology projects. IT projects exist within a variety of industries, including software development, information security, information systems, communications, hardware, network, databases, and mobile apps.
+
+  - question: IT project management.
+    answer: IT project management is the process of managing, planning, and developing information technology projects. IT projects exist within a variety of industries, including software development, information security, information systems, communications, hardware, network, databases, and mobile apps.
+
+  - question: Explain IT project management.
+    answer: IT project management is the process of managing, planning, and developing information technology projects. IT projects exist within a variety of industries, including software development, information security, information systems, communications, hardware, network, databases, and mobile apps.
+
+  - question: Define IT project management.
     answer: IT project management is the process of managing, planning, and developing information technology projects. IT projects exist within a variety of industries, including software development, information security, information systems, communications, hardware, network, databases, and mobile apps.
     
   - question: What are the phases of a project?
@@ -19,10 +55,10 @@ project_management:
     
   - question: How to calculate Net Profit?
     answer: The formula for calculating net profit is
-            Net Profit = Total revenue - Total expenses
+            Net Profit = Total revenue - Total expenses.
 
             It can also be expressed as
-            Net Profit = Gross Income - Total Expenses
+            Net Profit = Gross Income - Total Expenses.
 
             To determine your total revenue
             Total Revenue (net sales) = Quantity of goods/services sold * unit price

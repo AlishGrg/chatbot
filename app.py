@@ -167,8 +167,12 @@ app.secret_key = 'my_secret_key'  # Necessary for session management
 
 @app.route("/")
 def index():
-    # Clear project data on page load to reset state
-    session.pop('current_project', None)  # This ensures that the current project is cleared when page is loaded
+    # # Clear project data on page load to reset state
+    # session.pop('current_project', None)  # This ensures that the current project is cleared when page is loaded
+    # return render_template("index.html")
+
+    # Clear all session-stored project data on refresh
+    session.clear()
     return render_template("index.html")
 
 @app.route("/chat", methods=["POST"])
@@ -211,13 +215,23 @@ def chat():
                 "cash_flows": cash_flows
             }
 
-            # Prevent duplicates
-            if not any(p['name'].lower() == name.lower() for p in projects):
-                projects.append(project)
-                session['projects'] = projects  # Save updated list back to session
+            # # Prevent duplicates
+            # if not any(p['name'].lower() == name.lower() for p in projects):
+            #     projects.append(project)
+            #     session['projects'] = projects  # Save updated list back to session
 
 
-            # Save current project also for single metric calculations
+            # # Save current project also for single metric calculations
+            # session['current_project'] = project
+            # return jsonify({"reply": f"✅ Project '<b>{name.upper()}</b>' added successfully."})
+
+            # Check for duplicate project names
+            if any(p['name'].lower() == name.lower() for p in projects):
+                return jsonify({"reply": f"⚠️ A project with the name '<b>{name.upper()}</b>' already exists. Please choose a different name."})
+
+            # Add new project
+            projects.append(project)
+            session['projects'] = projects  # Save updated list back to session
             session['current_project'] = project
             return jsonify({"reply": f"✅ Project '<b>{name.upper()}</b>' added successfully."})
         except Exception as e:
