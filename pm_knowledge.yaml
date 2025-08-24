@@ -2,9 +2,6 @@ project_management:
   - question: What are you?
     answer: Hi, I am Alex. A chatbot designed as your project management companion.
 
-  - question: Who are you?
-    answer: Hi, I am Alex. A chatbot designed for you to be your project management companion.
-
   - question: how are you?
     answer: Hi there, I am Good and you? Thank you ^_^
 
@@ -44,8 +41,26 @@ project_management:
   - question: What are the phases of a project?
     answer: The phases are Initiation, Planning, Execution, Monitoring and Controlling, and Closure.
 
+  - question: define different phases of a project?
+    answer: The phases are Initiation, Planning, Execution, Monitoring and Controlling, and Closure.
+
   - question: What is NPV?
-    answer: NPV (Net Present Value) is the present value of future cash flows minus the initial investment.
+    answer: Net present value (NPV) is a way of working out the profitability of investments, projects, or business ventures. By discounting future cash flows to their present value, NPV tells you whether a venture is financially viable in the long term.
+
+  - question: define NPV?
+    answer: Net present value (NPV) is a way of working out the profitability of investments, projects, or business ventures. By discounting future cash flows to their present value, NPV tells you whether a venture is financially viable in the long term.
+
+  - question: What do you mean by NPV?
+    answer: Net present value (NPV) is a way of working out the profitability of investments, projects, or business ventures. By discounting future cash flows to their present value, NPV tells you whether a venture is financially viable in the long term.
+
+  - question: What does NPV mean?
+    answer: Net present value (NPV) is a way of working out the profitability of investments, projects, or business ventures. By discounting future cash flows to their present value, NPV tells you whether a venture is financially viable in the long term.
+
+  - question: What is NPV?
+    answer: Net present value (NPV) is a way of working out the profitability of investments, projects, or business ventures. By discounting future cash flows to their present value, NPV tells you whether a venture is financially viable in the long term.
+
+  - question: NPV.
+    answer: Net present value (NPV) is a way of working out the profitability of investments, projects, or business ventures. By discounting future cash flows to their present value, NPV tells you whether a venture is financially viable in the long term.
 
   - question: What is formula for ROI?
     answer: ROI (Return on Investment) is calculated as (Net Profit / Cost of Investment) × 100.
@@ -56,31 +71,86 @@ project_management:
   - question: How to calculate Net Profit?
     answer: The formula for calculating net profit is
             Net Profit = Total revenue - Total expenses.
-
             It can also be expressed as
             Net Profit = Gross Income - Total Expenses.
-
             To determine your total revenue
             Total Revenue (net sales) = Quantity of goods/services sold * unit price
 
   - question: what is the formula to calculate Net Profit?
     answer: The formula for calculating net profit is
             Net Profit = Total revenue - Total expenses
-
             It can also be expressed as
             Net Profit = Gross Income - Total Expenses
-
             To determine your total revenue
             Total Revenue (net sales) = Quantity of goods/services sold * unit price
+
+  - question: formula to calculate Net Profit?
+    answer: The formula for calculating net profit is
+            Net Profit = Total revenue - Total expenses
+            It can also be expressed as
+            Net Profit = Gross Income - Total Expenses
+            To determine your total revenue
+            Total Revenue (net sales) = Quantity of goods/services sold * unit price
+
+  - question: formula for calculating Net Profit.
+    answer: The formula for calculating net profit is
+            Net Profit = Total revenue - Total expenses
+            It can also be expressed as
+            Net Profit = Gross Income - Total Expenses
+            To determine your total revenue
+            Total Revenue (net sales) = Quantity of goods/services sold * unit price
+
+  - question: formula for calculation of Net Profit?
+    answer: The formula for calculating net profit is
+            Net Profit = Total revenue - Total expenses
+            It can also be expressed as
+            Net Profit = Gross Income - Total Expenses
+            To determine your total revenue
+            Total Revenue (net sales) = Quantity of goods/services sold * unit price
+
+  - question: Net Profit formula.
+    answer: The formula for calculating net profit is
+            Net Profit = Total revenue - Total expenses
+            It can also be expressed as
+            Net Profit = Gross Income - Total Expenses
+            To determine your total revenue
+            Total Revenue (net sales) = Quantity of goods/services sold * unit price          
 
   - question: What is a Gantt chart?
     answer: A Gantt chart is a bar chart that illustrates a project schedule and shows task dependencies over time.
 
-  - question: What is a project lifecycle?
-    answer: The project lifecycle includes all phases from the initiation to the closure of the project.
+  - question: What do you mean by Gantt chart?
+    answer: A Gantt chart is a bar chart that illustrates a project schedule and shows task dependencies over time.
+
+  - question: What does a Gantt chart mean?
+    answer: A Gantt chart is a bar chart that illustrates a project schedule and shows task dependencies over time.
+
+  - question: Gantt chart.
+    answer: A Gantt chart is a bar chart that illustrates a project schedule and shows task dependencies over time.
+
+  - question: define Gantt chart.
+    answer: A Gantt chart is a bar chart that illustrates a project schedule and shows task dependencies over time.
+
+  - question: explain Gantt chart.
+    answer: A Gantt chart is a bar chart that illustrates a project schedule and shows task dependencies over time.
 
   - question: What is risk management?
-    answer: Risk management involves identifying, assessing, and controlling threats to a project's success.
+    answer: Risk management is a process that allows individual risk events and overall risk to be understood and managed proactively, optimising success by minimising threats and maximising opportunities and outcomes. 
+
+  - question: What do you mean by risk management?
+    answer: Risk management is a process that allows individual risk events and overall risk to be understood and managed proactively, optimising success by minimising threats and maximising opportunities and outcomes.
+
+  - question: What does risk management mean?
+    answer: Risk management is a process that allows individual risk events and overall risk to be understood and managed proactively, optimising success by minimising threats and maximising opportunities and outcomes.
+
+  - question: define risk management.
+    answer: Risk management is a process that allows individual risk events and overall risk to be understood and managed proactively, optimising success by minimising threats and maximising opportunities and outcomes.
+
+  - question: Explain risk management.
+    answer: Risk management is a process that allows individual risk events and overall risk to be understood and managed proactively, optimising success by minimising threats and maximising opportunities and outcomes.
+
+  - question: risk management?
+    answer: Risk management is a process that allows individual risk events and overall risk to be understood and managed proactively, optimising success by minimising threats and maximising opportunities and outcomes.
 
   - question: What is the role of a project manager?
     answer: A project manager is responsible for planning, executing, and closing projects while managing teams, timelines, and budgets.
@@ -88,5 +158,32 @@ project_management:
   - question: What is a stakeholder?
     answer: A stakeholder is any individual or group who has an interest in or is affected by the outcome of a project.
 
+  - question: What do you mean by stakeholder?
+    answer: A stakeholder is any individual or group who has an interest in or is affected by the outcome of a project.
+
+  - question: What is the meaning of stakeholder?
+    answer: A stakeholder is any individual or group who has an interest in or is affected by the outcome of a project.
+
+  - question: What does stakeholder means?
+    answer: A stakeholder is any individual or group who has an interest in or is affected by the outcome of a project.
+
+  - question: define stakeholder.
+    answer: A stakeholder is any individual or group who has an interest in or is affected by the outcome of a project.
+
+  - question: explain stakeholder.
+    answer: A stakeholder is any individual or group who has an interest in or is affected by the outcome of a project.
+
   - question: What is a project charter?
+    answer: A project charter is a formal document that authorizes the project and gives the project manager the authority to use resources.
+
+  - question: define project charter?
+    answer: A project charter is a formal document that authorizes the project and gives the project manager the authority to use resources.
+
+  - question: What does project charter mean?
+    answer: A project charter is a formal document that authorizes the project and gives the project manager the authority to use resources.
+
+  - question: What do you mean by project charter?
+    answer: A project charter is a formal document that authorizes the project and gives the project manager the authority to use resources.
+
+  - question: explain project charter?
     answer: A project charter is a formal document that authorizes the project and gives the project manager the authority to use resources.
